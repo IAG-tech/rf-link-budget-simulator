@@ -6,9 +6,9 @@ The project is developed incrementally to ensure that each component of the syst
 
 ---
 
-# Version History and Planned Features
+## Version History and Planned Features
 
-## v0.1 – Initial Project Setup
+### v0.1 – Initial Project Setup
 
 Goals:
 
@@ -23,7 +23,7 @@ Features:
 
 ---
 
-## v0.2 – Core Link Budget
+### v0.2 – Core Link Budget
 
 Goals:
 
@@ -43,7 +43,7 @@ Outputs:
 
 ---
 
-## v0.3 – Large Scale Propagation
+### v0.3 – Large Scale Propagation
 
 Goals:
 
@@ -61,7 +61,7 @@ Capabilities:
 
 ---
 
-## v0.4 – Additional Propagation Models (Planned)
+### v0.4 – Additional Propagation Models (Planned)
 
 Goals:
 
@@ -75,7 +75,7 @@ This version focuses on large-scale propagation modelling.
 
 ---
 
-## v0.5 – Monte Carlo Simulation (Planned)
+### v0.5 – Monte Carlo Simulation (Planned)
 
 Goals:
 
@@ -93,7 +93,7 @@ This version introduces statistical link analysis.
 
 ---
 
-## v0.6 – Small Scale Fading (Planned)
+### v0.6 – Small Scale Fading (Planned)
 
 Goals:
 
@@ -112,7 +112,7 @@ Capabilities:
 
 ---
 
-## v0.7 – Advanced Channel Models (Future)
+### v0.7 – Advanced Channel Models (Future)
 
 Potential future extensions:
 
@@ -124,7 +124,7 @@ Potential future extensions:
 
 ---
 
-# Long-Term Goals
+## Long-Term Goals
 
 Possible future directions include:
 
@@ -136,7 +136,7 @@ Possible future directions include:
 
 ---
 
-# Development Philosophy
+## Development Philosophy
 
 The simulator is developed with the following principles:
 
