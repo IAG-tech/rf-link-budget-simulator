@@ -4,6 +4,10 @@
 
 A small RF simulation toolkit written in GNU Octave to explore radio propagation, link budget and coverage estimation.
 
+## Example simulation
+
+![Frequency comparation](/Octave/plots/frequency-effects.jpeg)
+
 ## Features
 
 - link budget calculation
