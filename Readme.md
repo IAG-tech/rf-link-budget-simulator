@@ -6,7 +6,7 @@ A small RF simulation toolkit written in GNU Octave to explore radio propagation
 
 ## Example simulation
 
-![Frequency comparation](/Octave/plots/frequency-effects.jpeg)
+![Frequency comparation](/Octave/plots/frequency-effects.jpg)
 
 ## Features
 
