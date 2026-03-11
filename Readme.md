@@ -2,7 +2,7 @@
 
 ## Overview
 
-Simulates RF communication links and evaluates link margin.
+A small RF simulation toolkit written in GNU Octave to explore radio propagation, link budget and coverage estimation.
 
 ## Features
 
@@ -17,6 +17,6 @@ Simulates RF communication links and evaluates link margin.
 
 ## Documentation
 
-docs/assumptions.md
-docs/roadmap.md
-docs/migration_to_octave.md
+/docs/assumptions.md
+/docs/roadmap.md
+/docs/migration_to_octave.md
