@@ -18,5 +18,7 @@ A small RF simulation toolkit written in GNU Octave to explore radio propagation
 ## Documentation
 
 [Assumptions](docs/assumptions.md)
+
 [Roadmap](docs/roadmap.md)
+
 [Migration to Python](docs/migration_octave_to_python.md)
