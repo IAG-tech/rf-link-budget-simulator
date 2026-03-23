@@ -1,3 +1,5 @@
+addpath(genpath(fileparts(mfilename('fullpath'))))
+
 % Shadow fading demo:
 % show how log-normal shadowing causes deviations around
 % the received power predicted by  the FPSL model

@@ -1,3 +1,5 @@
+addpath(genpath(fileparts(mfilename('fullpath'))))
+
 % Technology comparison demo
 % compares received power for TETRA and LTE800 using different
 % technology-specific link budget parameters

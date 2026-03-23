@@ -1,4 +1,4 @@
-function FSPL_dB = fspl( f_MHz , d_Km )
+function FSPL_dB = fspl( cfg , d_Km )
 
   %  FSPL Free Space Path Loss (dB)
 
@@ -11,11 +11,11 @@ function FSPL_dB = fspl( f_MHz , d_Km )
 
   % ---- Input validation ----
 
-  assert(all( f_MHz >0), "Frecuency must be >0MHz");
+  assert(all( cfg.f_MHz >0), "Frecuency must be >0MHz");
   assert(all( d_Km >0), "Distance must be >0Km");
 
   % ----- Calculation ------
 
-  FSPL_dB = 32.44 + 20*log10(f_MHz)+ 20*log10(d_Km);
+  FSPL_dB = 32.44 + 20*log10(cfg.f_MHz)+ 20*log10(d_Km);
 
 endfunction

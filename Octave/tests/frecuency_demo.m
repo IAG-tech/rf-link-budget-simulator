@@ -1,3 +1,5 @@
+addpath(genpath(fileparts(mfilename('fullpath'))))
+
 % Frequency effect demo
 % compares received power for two carrier frequencies while keeping
 % all other link budget parameters equal
@@ -21,14 +23,18 @@ lte.Lextra_dB = tetra.Lextra_dB;
 
 d_Km = linspace(0.1, 30, 300); % Distance vector from 0.1 Km to 30 Km
 
+
+scenario = "urban";
+city_type = "big";
+
 % ---------- FSPL ------------
 
-FSPL_dB_TETRA = fspl(tetra.f_MHz,d_Km); % Calculation of FSPL of TETRA technology using fspl function
-FSPL_dB_LTE   = fspl(lte.f_MHz,d_Km);   % Calculation of FSPL of LTE technology using fspl function
+Okumura_dB_TETRA = okumura_hata(d_Km,tetra, scenario, city_type); % Calculation of FSPL of TETRA technology using fspl function
+FSPL_dB_LTE   = fspl(lte,d_Km);   % Calculation of FSPL of LTE technology using fspl function
 
 % ---------- Link budget -----
 
-Pr_dBm_TETRA = compute_rx_power(tetra,FSPL_dB_TETRA); % Calculation of TETRA Received power using compute_rx_power function
+Pr_dBm_TETRA = compute_rx_power(tetra,Okumura_dB_TETRA); % Calculation of TETRA Received power using compute_rx_power function
 Pr_dBm_LTE = compute_rx_power(lte,FSPL_dB_LTE);       % Calculation of LTE Received power using compute_rx_power function
 
 % --------- Plots ------------

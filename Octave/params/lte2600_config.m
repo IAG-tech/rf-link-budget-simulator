@@ -1,9 +1,9 @@
-function cfg = lte800_config()
+function cfg = lte2600_config()
 
-  % LTE 800 MHz configuration parameters
+  % LTE 2600 MHz configuration parameters
 
-  cfg.name = "LTE-800";
-  cfg.f_MHz = 800;             % Typical bands 791 - 821 MHz uplink, 832 - 862 MHz downlink
+  cfg.name = "LTE-2600";
+  cfg.f_MHz = 2600;            % Typical band 2600MHz
 
   cfg.h_tx_m = 30;             % Transmitter antenna height
   cfg.h_rx_m = 1.5;            % Receiver height
