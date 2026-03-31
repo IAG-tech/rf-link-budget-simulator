@@ -1,126 +1,140 @@
 # Project Roadmap
 
 This document describes the planned development stages of the RF Link Budget Simulator.
-
-The project is developed incrementally to ensure that each component of the system is validated before introducing additional complexity.
+The project is developed incrementally to ensure that each component of the system is 
+validated before introducing additional complexity.
 
 ---
 
 ## Version History and Planned Features
 
-### v0.1 – Initial Project Setup
+### v0.1 – Initial Project Setup ✅
 
 Goals:
-
 - basic repository structure
 - initial documentation
 - simple link budget concept
 
 Features:
-
 - project documentation
 - basic architecture planning
 
 ---
 
-### v0.2 – Core Link Budget
+### v0.2 – Core Link Budget ✅
 
 Goals:
-
 Implement the basic RF link budget calculation.
 
 Features:
-
 - transmit power
 - antenna gains
 - Free Space Path Loss (FSPL)
 - received power calculation
 
 Outputs:
-
 - received power estimation
 - basic link margin evaluation
 
 ---
 
-### v0.3 – Large Scale Propagation
+### v0.3 – Large Scale Propagation ✅
 
 Goals:
-
 Introduce environmental variability into the link model.
 
 Features:
-
 - lognormal shadowing model
 - integration with link budget pipeline
 
 Capabilities:
-
 - deterministic link analysis
 - simple stochastic attenuation
 
 ---
 
-### v0.4 – Additional Propagation Models (Planned)
+### v0.4 – Additional Propagation Models ✅
 
 Goals:
-
 Expand the propagation modelling capabilities.
 
-Planned features:
-
+Features:
+- Okumura-Hata model (urban / suburban / rural)
+- COST 231-Hata model (urban extension, 1500–2000 MHz)
 - configurable propagation environments
 
-This version focuses on large-scale propagation modelling.
 
 ---
 
-### v0.5 – Monte Carlo Simulation (Planned)
+### v0.5 – Satellite Link Budget Scenario 🔄
 
 Goals:
+Extend the simulator to cover satellite communication scenarios.
 
+Features:
+- GEO satellite link scenario (35,786 km)
+- S-band and UHF frequency support
+- atmospheric loss margin
+- elevation angle effect on link margin
+- comparison: terrestrial vs satellite link budget
+
+This version bridges the simulator with real space-to-ground 
+communication analysis.
+
+---
+
+### v0.6 – Migration to Python
+
+Goals:
+Migrate the full codebase to Python for modularity, 
+maintainability and ecosystem integration.
+
+Features:
+- modular architecture (propagation, link budget, utils)
+- model dispatcher pattern
+- NumPy / SciPy implementation
+- Matplotlib visualisation
+- equivalent outputs to Octave prototype
+
+---
+
+### v0.7 – Monte Carlo Simulation
+
+Goals:
 Move from deterministic analysis to statistical analysis.
 
-Planned features:
-
+Features:
 - Monte Carlo simulation framework
 - random shadowing generation
 - SNR distribution analysis
-- link margin
+- link margin statistics
 - outage probability estimation
 
-This version introduces statistical link analysis.
-
 ---
 
-### v0.6 – Small Scale Fading (Planned)
+### v0.8 – 2D Coverage Map
 
 Goals:
+Introduce spatial visualisation of coverage.
 
-Introduce multipath channel effects. Begin migration to Python.
-
-Planned models:
-
-- Rayleigh fading
-- Rician fading
-
-Capabilities:
-
-- modelling fast signal fluctuations
-- evaluation of link robustness under fading
-- Basic Python implementation
+Features:
+- 2D coverage map generation
+- configurable transmitter position
+- colour-mapped received power / link margin
+- multiple model overlay
 
 ---
 
-### v0.7 – Advanced Channel Models (Future)
+### v0.9 – SDR Integration and Model Validation
 
-Potential future extensions:
+Goals:
+Connect simulated models with real measured signals.
 
-- Nakagami fading
-- correlated shadowing
-- time-varying channels
-- Doppler effects
-- mobility models
+Features:
+- RTL-SDR signal capture
+- measured vs simulated path loss comparison
+- model validation workflow
+- DSP pipeline integration (FFT, filtering)
 
 ---
 
@@ -128,11 +142,11 @@ Potential future extensions:
 
 Possible future directions include:
 
-- SDR integration
-- channel measurement validation
-- realistic propagation environments
-- advanced simulation workflows
-- Python scientific ecosystem integration
+- small-scale fading (Rayleigh, Rician)
+- mobility models and dynamic simulation
+- Doppler effects
+- GNU Radio integration
+- advanced radar signal processing
 
 ---
 
@@ -145,4 +159,5 @@ The simulator is developed with the following principles:
 - reproducible simulations
 - progressive complexity
 
-Each version adds one layer of realism while maintaining clarity in the model design.
+Each version adds one layer of realism while maintaining 
+clarity in the model design.
