@@ -66,7 +66,7 @@ Features:
 
 ---
 
-### v0.5 – Satellite Link Budget Scenario 🔄
+### v0.5 – Satellite Link Budget Scenario ✅
 
 Goals:
 Extend the simulator to cover satellite communication scenarios.
@@ -83,7 +83,7 @@ communication analysis.
 
 ---
 
-### v0.6 – Migration to Python
+### v0.6 – Migration to Python 🔄
 
 Goals:
 Migrate the full codebase to Python for modularity, 

@@ -20,6 +20,13 @@ Currently implemented in GNU Octave (prototype). Python migration in progress.
 
 ## Results
 
+### GEO Link Margin vs Elevation Angle
+
+Comparison between UHF link margin and S-band link margin.
+Despite of UHF's lower propagation loss the lower receiver antenna gain (13dBi Yagi vs 30 dBi parabolic dish for S-band) results in a lower link margin. The minimum operational elevation angle for UHF is 41.49º.
+
+![GEO Link Margin](Octave/plots/GEO-link-margin-vs-Angle.jpg)
+
 ### Shadow Fading Effect
 Log-normal shadowing overlaid on deterministic path loss.  
 Illustrates signal variability around the mean — key for link margin and outage analysis.
@@ -104,8 +111,8 @@ rf-link-budget-simulator/
 | v0.2 | Core link budget (FSPL) | ✅ Done |
 | v0.3 | Log-normal shadowing | ✅ Done |
 | v0.4 | Okumura-Hata + COST231 | ✅ Done |
-| v0.5 | Satellite scenario — GEO, S-band, UHF | 🔄 In progress |
-| v0.6 | Migration to Python (modular) | 📋 Planned |
+| v0.5 | Satellite scenario — GEO, S-band, UHF | ✅ Done  |
+| v0.6 | Migration to Python (modular) | 🔄 In progress |
 | v0.7 | Monte Carlo simulation (Python) | 📋 Planned |
 | v0.8 | 2D coverage map | 📋 Planned |
 | v0.9 | SDR integration and model validation | 📋 Planned |
