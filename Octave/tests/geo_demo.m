@@ -66,6 +66,7 @@ hold on
 plot(angle, zeros(size(d_Km)),'--k')
 grid on
 ylim([-2 3])
+xlim([5 100])
 xlabel("Angle (º)")
 ylabel("Link margin (dB)")
 title("GEO Link Margin vs Elevation Angle")
