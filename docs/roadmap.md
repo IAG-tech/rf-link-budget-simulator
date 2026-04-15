@@ -83,7 +83,7 @@ communication analysis.
 
 ---
 
-### v0.6 – Migration to Python 🔄
+### v0.6 – Migration to Python ✅
 
 Goals:
 Migrate the full codebase to Python for modularity, 
@@ -93,12 +93,12 @@ Features:
 - modular architecture (propagation, link budget, utils)
 - model dispatcher pattern
 - NumPy / SciPy implementation
-- Matplotlib visualisation
+- Plotly visualisation
 - equivalent outputs to Octave prototype
 
 ---
 
-### v0.7 – Monte Carlo Simulation
+### v0.7 – Monte Carlo Simulation 🔄
 
 Goals:
 Move from deterministic analysis to statistical analysis.
@@ -112,17 +112,15 @@ Features:
 
 ---
 
-### v0.8 – 2D Coverage Map
+### Electronic Warfare module 
 
 Goals:
-Introduce spatial visualisation of coverage.
+Evaluate link resilience.
 
 Features:
-- 2D coverage map generation
-- configurable transmitter position
-- colour-mapped received power / link margin
-- multiple model overlay
-
+- ESM
+- J/S ratio
+- Burn-through range
 ---
 
 ### v0.9 – SDR Integration and Model Validation

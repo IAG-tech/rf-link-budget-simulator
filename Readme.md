@@ -3,7 +3,7 @@
 A modular RF propagation and link budget simulation toolkit.  
 Built to explore real-world radio coverage scenarios using validated propagation models.
 
-Currently implemented in GNU Octave (prototype). Python migration in progress.
+Implemented in Python. Octave prototype preserved for reference.
 
 ---
 
@@ -18,6 +18,22 @@ Currently implemented in GNU Octave (prototype). Python migration in progress.
 
 ---
 
+## Demos
+
+Interactive Jupyter notebooks are available in the `demos/` folder:
+
+| Demo | Description |
+|---|---|
+| `frequency_comparison.ipynb` | TETRA vs LTE800 — isolating frequency effect (FSPL) |
+| `lte_vs_tetra_demo.ipynb` | TETRA vs LTE800 — full system comparison |
+| `height_antenna_comparison_demo.ipynb` | Antenna height effect on coverage — LTE1800 |
+| `LTE_Link_Margin_demo.ipynb` | FSPL vs Okumura-Hata vs COST231 |
+| `LTE_Technologies_Comparison_demo.ipynb` | LTE800 / LTE1800 / LTE2600 comparison |
+| `shadow_fading_demo.ipynb` | Log-normal shadow fading — motivation for Monte Carlo |
+| `GEO_demo.ipynb` | GEO satellite link — S-band vs UHF, elevation angle analysis |
+
+---
+
 ## Results
 
 ### GEO Link Margin vs Elevation Angle
@@ -25,21 +41,17 @@ Currently implemented in GNU Octave (prototype). Python migration in progress.
 Comparison between UHF link margin and S-band link margin.
 Despite of UHF's lower propagation loss the lower receiver antenna gain (13dBi Yagi vs 30 dBi parabolic dish for S-band) results in a lower link margin. The minimum operational elevation angle for UHF is 41.49º.
 
-![GEO Link Margin](Octave/plots/GEO-link-margin-vs-Angle.jpg)
 
 ### Shadow Fading Effect
 Log-normal shadowing overlaid on deterministic path loss.  
 Illustrates signal variability around the mean — key for link margin and outage analysis.
 
-![Shadow Fading](Octave/plots/Shadow-fading.jpg)
 
 ---
 
 ### TETRA vs LTE800 — Received Power
 Direct comparison between a critical communications system (TETRA, 400 MHz) and LTE800.  
-TETRA's lower frequency provides ~8–10 dB advantage at distances beyond 10 km — relevant for public safety and defense coverage planning.
-
-![TETRA vs LTE800](Octave/plots/frequency-effects.jpg)
+TETRA's lower frequency provides ~6–7 dB advantage at distances beyond 10 km — relevant for public safety and defense coverage planning.
 
 ---
 
@@ -47,24 +59,21 @@ TETRA's lower frequency provides ~8–10 dB advantage at distances beyond 10 km 
 FSPL serves as the theoretical upper bound (free space, no clutter).  
 Okumura-Hata and COST231 introduce realistic urban attenuation, showing 30–60 dB additional loss at range.
 
-![Model Comparison](Octave/plots/Propagation-Model-Comparison.jpg)
 
 ---
 
 ### LTE Band Comparison — 800 / 1800 / 2600 MHz
 Link margin vs distance for the three main LTE deployment bands.  
-LTE800 maintains positive link margin (~3.5 km), while LTE2600 fails beyond ~1.8 km under the same conditions.
+LTE800 maintains positive link margin (~3.5 km), while LTE2600 fails beyond ~1 km under the same conditions.
 
-![LTE Band Comparison](Octave/plots/LTE-link-margin-comparison.jpg)
 
 ---
 
 ### Antenna Height Sensitivity — LTE1800 (Okumura-Hata)
 Effect of base station antenna height (20 / 40 / 80 m) on link margin.  
-Quadruplicate height from 20m to 80m extends the usable range by ~2 km at 0 dB margin.
+Quadruplicate height from 20m to 80m extends the usable range by ~1 km at 0 dB margin.
 
-![Antenna Height](Octave/plots/Antenna-height-comparison.jpg)
-
+> Interactive demos with live plots available in the `demos/` folder
 ---
 
 ## Key Parameters (current baseline)
@@ -84,21 +93,23 @@ Quadruplicate height from 20m to 80m extends the usable range by ~2 km at 0 dB m
 ## Project Structure
 ```
 rf-link-budget-simulator/
-├── Octave/                      # Prototype implementation
-│   ├── params/                  # Technology parameters
-│   ├── plots/                   # Generated simulation outputs
+├── Python/                      # Current implementation (v0.6)
+│   ├── params/                  # Technology-specific configuration files
+│   ├── demos/                   # Jupyter notebook demos
 │   ├── src/
-│   |   ├── linkbudget/          # Link budget calculation and margin analysis
-│   |   ├── propagation/         # Propagation model implementations
-│   |   |   ├── pathloss/        # Path loss models (FSPL, Okumura-Hata, COST231)
-│   |   |   ├── shadowing/       # Statistical shadowing (log-normal)
-│   |   ├── utils/               # Utilities and helper functions
-│   └── tests/                   # Demo scripts and simulation scenarios
+│   │   ├── linkbudget/          # EIRP, received power, link margin
+│   │   ├── propagation/
+│   │   │   ├── pathloss/        # FSPL, Okumura-Hata, COST231
+│   │   │   └── shadowing/       # Log-normal shadow fading
+│   │   └── utils/               # Zero crossing, coverage reporting
+│   └── run_simulation.py        # Main simulation entry point
+├── Octave/                      # Prototype implementation (preserved)
 ├── docs/
-│   ├── assumptions.md           # Model parameters and scope
-│   ├── roadmap.md               # Development plan
+│   ├── assumptions.md
+│   ├── roadmap.md
 │   └── migration_octave_to_python.md
 └── README.md
+
 ```
 
 ---
@@ -112,9 +123,9 @@ rf-link-budget-simulator/
 | v0.3 | Log-normal shadowing | ✅ Done |
 | v0.4 | Okumura-Hata + COST231 | ✅ Done |
 | v0.5 | Satellite scenario — GEO, S-band, UHF | ✅ Done  |
-| v0.6 | Migration to Python (modular) | 🔄 In progress |
-| v0.7 | Monte Carlo simulation (Python) | 📋 Planned |
-| v0.8 | 2D coverage map | 📋 Planned |
+| v0.6 | Python migration — modular architecture, Jupyter demos | ✅ Done |
+| v0.7 | Monte Carlo simulation  | 🔄 In progress |
+| v0.8 | Electronic Warfare module — ESM, J/S ratio, burn-through range | 📋 Planned |
 | v0.9 | SDR integration and model validation | 📋 Planned |
 
 Full roadmap: [docs/roadmap.md](docs/roadmap.md)
@@ -123,9 +134,19 @@ Full roadmap: [docs/roadmap.md](docs/roadmap.md)
 
 ## Stack
 
-- **Current:** GNU Octave
-- **In progress:** Python (NumPy, SciPy, Matplotlib)
-- **Planned:** GNU Radio, SDR integration
+- **Current:** Python (NumPy, SciPy, Plotly, Jupyter)
+- **Prototype:** GNU Octave (preserved in `Octave/`)
+- **Planned:** Monte Carlo, EW module, SDR integration
+
+---
+
+## Model Validity Notes
+
+| Model | Valid Range | Notes |
+|---|---|---|
+| Okumura-Hata | 150–1500 MHz | Applied at 1800 MHz in some demos — outside valid range, results approximate |
+| COST231-Hata | 1500–2000 MHz | Applied at 2600 MHz in LTE band comparison — outside valid range |
+| FSPL | Any | Theoretical lower bound — optimistic for terrestrial scenarios |
 
 ---
 

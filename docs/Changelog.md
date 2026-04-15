@@ -1,8 +1,16 @@
 # Changelog
 
-## v0.5 (planned)
+## v0.7 (planned) 
  - Monte Carlo simulation
  - Coverage probability analysis
+
+## v0.6 
+ - Python migration.
+ - Dispatcher and run_simulation scripts added 
+
+## v0.5 
+ - GEO satellite link budget
+ - Angle elevation analysis
 
 ## v0.4
  - Added Okumura-Hata propagation model
