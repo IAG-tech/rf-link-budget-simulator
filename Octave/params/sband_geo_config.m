@@ -15,7 +15,7 @@ function cfg = sband_geo_config()
 
   cfg.Ltx_dB = 0;
   cfg.Lrx_dB = 0;
-  cfg.Lextra_dB = 1;                    % Atmosferic losses
+  cfg.Lextra_dB = 1;                    % Atmospheric losses
 
   cfg.sensitivity_dBm = -120;           % -100 to -120 dBm
 

@@ -11,7 +11,7 @@ function FSPL_dB = fspl( cfg , d_Km )
 
   % ---- Input validation ----
 
-  assert(all( cfg.f_MHz >0), "Frecuency must be >0MHz");
+  assert(all( cfg.f_MHz >0), "Frequency must be >0MHz");
   assert(all( d_Km >0), "Distance must be >0Km");
 
   % ----- Calculation ------

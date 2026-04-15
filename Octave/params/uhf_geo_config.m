@@ -6,7 +6,7 @@ function cfg = uhf_geo_config()
   % Ground station: Yagi antenna (13 dBi)
 
   cfg.name = "UHF";
-  cfg.f_MHz = 400;               % Frequency of S-band
+  cfg.f_MHz = 400;               % Frequency of UHF
 
   cfg.Ptx_dBm = 37;              % 30 to 37 dBm small satellites
   cfg.Gtx_dBi = 6;               %  0 to 6 dBi omnidirectional antennas
@@ -15,7 +15,7 @@ function cfg = uhf_geo_config()
 
   cfg.Ltx_dB = 0;
   cfg.Lrx_dB = 0;
-  cfg.Lextra_dB = 0;             % Atmosferic losses
+  cfg.Lextra_dB = 0;             % Atmospheric losses
 
   cfg.sensitivity_dBm = -120;    % -100 to -120 dBm
 

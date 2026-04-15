@@ -32,7 +32,7 @@ function cost = cost_hata(d_Km, cfg, scenario)
               constant = 3;
              elseif (cfg.f_MHz>200 && cfg.f_MHz<=2000)
               correction = 3.2*(log10(11.75*cfg.h_rx_m))^2-4.97;
-              constant = 0;
+              constant = 3;
             else
               error("Wrong frequency");
             endif
