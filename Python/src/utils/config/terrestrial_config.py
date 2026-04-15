@@ -22,6 +22,7 @@ class TerrestrialConfig(TechConfig):
     city_type: str # 'large', 'medium_small' (for COST231)
 @dataclass
 class GeoConfig(TechConfig):
-    # Satellite values
+    # GEO Satellite values
     terrestrial_radio_Km: float
     geo_distance_Km: float
+
