@@ -1,6 +1,6 @@
 import numpy as np
 
-def orbital_distance(r, h, elevation_deg):
+def slant_range(r, h, elevation_deg):
     """
     Compute slant range between ground station and satellite
     as a function of elevation angle.

@@ -1,6 +1,6 @@
-from src.utils.satellite_config import LEOConfig
+from src.utils.config.satellite_config import LEOConfig
 
-leo_config = LEOConfig(
+leo_optimistic_config = LEOConfig(
 
     name = "LEO scenario",
 
@@ -12,7 +12,7 @@ leo_config = LEOConfig(
 
     Ltx_dB = 0,
     Lrx_dB = 0,
-    Lextra_dB = 2,  # Atmospheric losses
+    Lextra_dB = 2,
     model = "fspl",
     sensitivity_dBm = -120,  # -100 to -120 dBm
 )

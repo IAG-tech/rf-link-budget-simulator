@@ -1,4 +1,4 @@
-from src.utils.config import TerrestrialConfig
+from src.utils.config.terrestrial_config import TerrestrialConfig
 
 lte2600 = TerrestrialConfig(
     # LTE 2600 MHz configuration parameters

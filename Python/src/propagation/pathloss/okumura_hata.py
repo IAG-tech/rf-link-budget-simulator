@@ -1,5 +1,5 @@
 import numpy as np
-from src.utils.height_correction import height_correction
+from src.utils.geometry.height_correction import height_correction
 def okumura_hata(cfg,dist):
     """
     OKUMURA-HATA propagation model

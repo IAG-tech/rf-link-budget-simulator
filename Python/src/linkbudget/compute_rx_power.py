@@ -1,5 +1,5 @@
 
-def compute_rx_power(eirp,cfg, pl):
+def compute_rx_power(eirp,cfg, pl,):
     """
 
     Pr is the received power at the receiver (dBm)

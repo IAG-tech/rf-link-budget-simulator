@@ -1,4 +1,4 @@
-from src.utils.config import GeoConfig
+from src.utils.config.satellite_config import GEOConfig
 
 """
     UHF GEO satellite configuration
@@ -6,7 +6,7 @@ from src.utils.config import GeoConfig
     Frequency: 400 MHz (UHF, typical for satellite command and telemetry)
     Ground station: Yagi antenna (13 dBi)
 """
-uhf = GeoConfig(
+uhf = GEOConfig(
 
     name = "UHF",
     f_MHz = 400,    # Frequency of UHF

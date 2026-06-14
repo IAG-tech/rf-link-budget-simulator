@@ -4,30 +4,39 @@ from src.linkbudget.eirp import eirp
 from src.propagation.shadowing.shadow_fading import shadow_fading
 from src.utils.link_budget.link_margin import link_margin
 from src.utils.geometry.zero_crossing_distance import zero_crossing_distance
-from src.utils.geometry.zero_crossing_elevation import zero_crossing_elevation
-from src.utils.geometry.orbital.GEO_distance import geo_distance
 
 
-def run_simulation(cfg, dist, model=None,shadowing=False):
+def run_terrestrial(cfg, dist, model=None, shadowing=False):
+    """
+        Runs the terrestrial RF link budget simulation.
+
+        Computes path loss using the selected propagation model, optionally adds
+        log-normal shadowing, and returns the link margin and received power
+        over a range of distances.
+
+        Args:
+            cfg (TerrestrialConfig): System configuration — frequency, TX power,
+                antenna gains, losses, sensitivity, propagation model parameters.
+            dist (np.ndarray): Distance vector in km.
+            model (str, optional): Propagation model override. If None, uses cfg.model.
+                Supported: 'fspl', 'okumura_hata', 'cost231'.
+            shadowing (bool): If True, adds log-normal shadowing on top of path loss.
+
+        Returns:
+            margin (np.ndarray): Link margin in dB for each distance value.
+                Positive = viable link, negative = insufficient signal.
+            value0 (float): Distance in km where link margin crosses zero —
+                maximum coverage range.
+            rx_power (np.ndarray): Received power in dBm for each distance value.
+        """
+
     model_to_use = model if model else cfg.model
-    if cfg.name == "UHF" or cfg.name == "S-band":
-        distance = geo_distance(cfg, dist)
-        path_loss = dispatcher(model_to_use, cfg, distance)
-        eirp_value = eirp(cfg)
-        rx_power = compute_rx_power(eirp_value, cfg, path_loss)
-        margin = link_margin(rx_power, cfg)
-        value0 = zero_crossing_elevation(margin, dist)
-    else:
-
-        path_loss = dispatcher(model_to_use,cfg, dist)
-        if shadowing:
-            path_loss = shadow_fading(path_loss,cfg)
-        eirp_value = eirp(cfg)
-        rx_power = compute_rx_power(eirp_value,cfg, path_loss)
-        margin = link_margin(rx_power,cfg)
-        value0 = zero_crossing_distance(margin, dist)
+    path_loss = dispatcher(model_to_use, cfg, dist)
+    if shadowing:
+        path_loss = shadow_fading(path_loss, cfg)
+    eirp_value = eirp(cfg)
+    rx_power = compute_rx_power(eirp_value, cfg, path_loss)
+    margin = link_margin(rx_power, cfg)
+    value0 = zero_crossing_distance(margin, dist)
 
     return margin, value0, rx_power
-
-
-

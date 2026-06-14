@@ -1,5 +1,4 @@
-from src.propagation.pathloss.okumura_hata import okumura_hata
-from src.utils.config import TerrestrialConfig
+from src.utils.config.terrestrial_config import TerrestrialConfig
 
 tetra = TerrestrialConfig(
     # TETRA 400 MHz configuration parameters

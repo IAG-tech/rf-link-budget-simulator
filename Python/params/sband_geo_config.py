@@ -1,4 +1,4 @@
-from src.utils.config import GeoConfig
+from src.utils.config.satellite_config import GEOConfig
 
 """
    S-band GEO satellite configuration
@@ -7,7 +7,7 @@ from src.utils.config import GeoConfig
    Ground station: small parabolic dish (30 dBi)
 """
 
-Sband = GeoConfig(
+Sband = GEOConfig(
 
 
 
