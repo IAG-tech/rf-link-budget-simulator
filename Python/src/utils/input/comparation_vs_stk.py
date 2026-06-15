@@ -18,8 +18,8 @@ def comparation_vs_stk():
            STK scenario: Facility1 (Vigo, 42.24°N, 8.72°W),
            Satellite1 (250km, 97° inclination), 26-27 May 2026.
        """
-    df = pd.read_csv(r'D:\STK\LEO_VLEO_Analysis\Facility-Facility1-To-Satellite-Satellite1_AER.csv',
-                 skiprows=1,  # saltar cabecera original
+    df = pd.read_csv('..\..\data\stk\Facility-Facility1-To-Satellite-Satellite1_AER.csv',
+                 skiprows=1,
                  names=['time', 'azimuth', 'elevation', 'range'],on_bad_lines='skip')
 
     # Filter valid data rows — keep only rows with actual timestamps
